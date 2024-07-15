@@ -30,4 +30,8 @@ if archivo_csv is not None:
     y_column = st.selectbox('Selecciona una columna para el eje Y:', df.columns)
     st.line_chart(df[[x_column, y_column]])
 
-    # Más análisis y visualizaciones según sea necesario
+
+    # Gráfico interactivo: Gráfico de barras
+    st.subheader("Gráfico de Barras:")
+    column_for_bars = st.selectbox('Selecciona una columna para el gráfico de barras:', df.columns)
+    st.bar_chart(df[column_for_bars].value_counts())
